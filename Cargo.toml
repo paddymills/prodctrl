@@ -1,0 +1,28 @@
+[package]
+name = "prodctrl"
+version = "0.1.0"
+authors = ["paddymills <paddymills@pm.me>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+calamine = "0.18.0"
+dirs = "3.0.2"
+futures = "0.3.12"
+toml = "0.5.8"
+
+[dependencies.sqlx]
+version = "0.5.5"
+features = [ "mssql", "runtime-async-std-native-tls" ]
+
+[dependencies.async-std]
+version = "1.9.0"
+features = [ "attributes" ]
+
+[dependencies.winapi]
+version = "0.3.9"
+features = [ "winuser", "windef", "winnt" ]
+
+[target.'cfg(windows)'.build-dependencies]
+winres = "0.1.11"
